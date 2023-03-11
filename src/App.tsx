@@ -1,13 +1,13 @@
 import React from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { AccessibilityWidget } from 'react-accessibility'
-import Hero from './components/Hero/Hero';
+import Blog from './components/Blog/Blog';
 
 function App() {
   return (
     <>
-    <Hero />
+    <Blog />
     <AccessibilityWidget />
     </>
   );
