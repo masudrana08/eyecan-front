@@ -4,25 +4,15 @@ import getImg from "../../utils/getImg";
 import MyModal from "../MyModal/MyModal";
 import "./blog.css";
 
-// interface MyContextProps {
-//   blogs: {title:String, description:String, thumbnail:String, link:String}[],
-//   setBlogs : (data:[])=>void
-//  }
-interface IBlog{
-  title:String, 
-  description:String, 
-  thumbnail:String, 
-  link:String,
-  "_id":String,
-  createdAt:String
-}
+
+
 
 export default function Blog() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [link, setLink] = useState("");
   const [file, setFile] = useState<File | null>(null);
-  const { blogs }: any = useContext(MyContext);
+  const { blogs, setShow } = useContext(MyContext);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
@@ -37,6 +27,15 @@ export default function Blog() {
     if (description) formData.append("description", description);
     if (link) formData.append("link", link);
     if (file) formData.append("thumbnail", file);
+    const API = process.env.REACT_APP_API
+    fetch(API+"/blog", {
+      method: 'POST',
+      body: formData,
+    })
+    .then(()=>{
+      setShow(false)
+    })
+    
   };
 
   return (
@@ -70,10 +69,10 @@ export default function Blog() {
       {/* Show Blog  */}
       show blog
       <div>
-        {blogs.map((blog:IBlog) => {
+        {blogs.map((blog) => {
           return (
-            <div key={blog._id.toString()}>
-              <img src={`${getImg(blog.thumbnail)}`} alt="" />
+            <div key={blog._id}>
+              <img src={getImg(blog.thumbnail)} alt="" />
               <h3>{blog.title}</h3>
               <p>{blog.description}</p>
             </div>
