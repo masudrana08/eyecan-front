@@ -1,9 +1,34 @@
-
-
 html{
   background-color: white!important;
 }
 
 body{
   font-family: 'Montserrat Alternates', sans-serif;
+}
+
+:root{
+  --main-color: #EC9535;
+  --success-color: #389c5d;
+  --danger-color: rgb(209, 52, 52);
+}
+
+.mainBtn{
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+}
+.successBtn{
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+}
+.dangerBtn{
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+}
+
+.mainBtn:hover, .successBtn:hover, .dangerBtn:hover{
+  background-color: var(--main-color);
+  opacity: .8;
 }
