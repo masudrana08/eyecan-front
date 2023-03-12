@@ -73,7 +73,7 @@ export default function Blog() {
       <div className="blogs">
         {blogs.map((blog) => {
           return (
-            <div className="item">
+            <div key={blog._id} className="item">
               <MyCard blog={blog} />
             </div>
           );

@@ -1,7 +1,7 @@
 .blog-form{
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 10px
 }
 
 .blog-form * {
@@ -20,7 +20,8 @@
 .blogs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 30px;
+    row-gap: 50px;
     max-width: 1000px;
     margin-left: 0px;
     margin-right: 0px;
