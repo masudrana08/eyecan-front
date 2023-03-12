@@ -11,7 +11,11 @@ html{
   --my-font: 'Montserrat Alternates', sans-serif;
 }
 
-
+h1, h2{
+  font-family: var(--my-font);
+  font-weight: bold;
+  
+}
 
 .mainText{
   color: var(--main-color)

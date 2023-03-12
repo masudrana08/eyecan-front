@@ -41,6 +41,7 @@ export default function Blog() {
   return (
     <div className="my-5">
       {/* Create blog  */}
+      <h2 className="text-center ">Welcome to Our Blog</h2>
       <div>
         <MyModal btnName="Create Blog" header="Write Blog">
           <form onSubmit={handleFormSubmit} className="blog-form">
