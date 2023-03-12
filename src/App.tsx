@@ -3,6 +3,7 @@ import './App.css';
 import { AccessibilityWidget } from 'react-accessibility'
 import Blog from './components/Blog/Blog';
 import React, { createContext, useEffect, useState } from 'react';
+import Hero from './components/Hero/Hero';
  interface MyContextProps {
  blogs: {title:string, description:string, thumbnail:string, link:string, "_id":string, createdAt:string, updatedAt:string}[],
  setBlogs : (data:[])=>void,
@@ -30,6 +31,7 @@ function App() {
   },[show])
   return (
     <MyContext.Provider value={value}>
+      <Hero/>
       <Blog />
       <AccessibilityWidget />
     </MyContext.Provider>

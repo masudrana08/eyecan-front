@@ -2,16 +2,17 @@ html{
   background-color: white!important;
 }
 
-body{
-  font-family: 'Montserrat Alternates', sans-serif;
-}
 
 :root{
   --main-color: #EC9535;
   --success-color: #389c5d;
   --danger-color: rgb(209, 52, 52);
-}
 
+  --my-font: 'Montserrat Alternates', sans-serif;
+}
+.mainText{
+  color: var(--main-color)
+}
 .mainBtn{
   background-color: var(--main-color);
   color: white;

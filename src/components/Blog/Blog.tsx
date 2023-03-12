@@ -1,11 +1,8 @@
 import React, { useContext, useState } from "react";
 import { MyContext } from "../../App";
-import getImg from "../../utils/getImg";
+import MyCard from "../MyCard/MyCard";
 import MyModal from "../MyModal/MyModal";
 import "./blog.css";
-
-
-
 
 export default function Blog() {
   const [title, setTitle] = useState("");
@@ -34,12 +31,15 @@ export default function Blog() {
     })
     .then(()=>{
       setShow(false)
+      setTitle("")
+      setDescription("")
+      setLink("")
     })
     
   };
 
   return (
-    <div>
+    <div className="my-5">
       {/* Create blog  */}
       <div>
         <MyModal btnName="Create Blog" header="Write Blog">
@@ -49,11 +49,13 @@ export default function Blog() {
               placeholder="Title"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
+              maxLength={50}
             />
             <textarea
               value={description}
               placeholder="Description"
               onChange={(event) => setDescription(event.target.value)}
+              maxLength={120}
             />
             <input
               type="text"
@@ -67,14 +69,11 @@ export default function Blog() {
         </MyModal>
       </div>
       {/* Show Blog  */}
-      show blog
-      <div>
+      <div className="blogs">
         {blogs.map((blog) => {
           return (
-            <div key={blog._id}>
-              <img src={getImg(blog.thumbnail)} alt="" />
-              <h3>{blog.title}</h3>
-              <p>{blog.description}</p>
+            <div className="item">
+              <MyCard blog={blog} />
             </div>
           );
         })}

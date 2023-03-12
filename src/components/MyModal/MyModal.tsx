@@ -14,8 +14,8 @@ export default function MyModal(props:IProps) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   return (
-    <div>
-      <Button className="mainBtn" onClick={handleShow}>
+    <div >
+      <Button className="mainBtn createBlogBtn" onClick={handleShow}>
         {props.btnName}
       </Button>
 
